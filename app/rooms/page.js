@@ -23,7 +23,7 @@ export default function Rooms() {
   const getWhatsAppLink = (roomType, price) => {
     const { name, checkIn, checkOut, guests } = bookingInfo;
     const text = `Hello Same Hotel, I would like to book a stay:\n\n🏨 Room Category: ${roomType} ($${price}/night)\n👤 Name: ${name || "Not specified"}\n📅 Check-in: ${checkIn || "Not specified"}\n📅 Check-out: ${checkOut || "Not specified"}\n👥 Guests: ${guests}`;
-    return `https://wa.me/252610000000?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/2520907275534?text=${encodeURIComponent(text)}`;
   };
 
   return (

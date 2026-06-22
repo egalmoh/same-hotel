@@ -59,7 +59,7 @@ export default function Footer() {
         <div className={styles.footerColumn}>
           <h4 className={styles.footerColTitle}>Inquiries</h4>
           <p className={styles.inquiryText}>stay@samehotel.com</p>
-          <p className={styles.inquiryText}>+252 61 000 0000</p>
+          <p className={styles.inquiryText}>+252 090 727 5534</p>
           
           <div className={styles.newsletter}>
             <h5 className={styles.newsletterTitle}>Join the Same Circle</h5>

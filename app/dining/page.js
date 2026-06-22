@@ -6,7 +6,7 @@ import styles from "../subpages.module.css";
 export default function Dining() {
   const getWhatsAppOrderLink = (itemName, price) => {
     const text = `Hello Same Hotel, I would like to order the dining item:\n\n🍽️ Item: ${itemName}\n💰 Price: $${price.toFixed(2)}`;
-    return `https://wa.me/252610000000?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/2520907275534?text=${encodeURIComponent(text)}`;
   };
 
   const breakfastMenu = [
