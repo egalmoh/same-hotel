@@ -614,7 +614,7 @@
 .statsBar {
   background-color: var(--color-dark);
   width: 100%;
-  padding: 24px 10%;
+  padding: 32px 10% 96px 10%;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -652,7 +652,7 @@
   border: 1px solid rgba(0, 0, 0, 0.015);
   width: 100%;
   max-width: 850px;
-  margin-top: -60px; /* pull up over the stats bar slightly */
+  margin-top: -64px; /* pull up over the stats bar slightly */
   z-index: 10;
   position: relative;
   margin-bottom: 80px;
@@ -1085,11 +1085,11 @@
     grid-template-columns: 1fr;
   }
   .statsBar {
-    padding: 20px;
+    padding: 24px 24px 80px 24px;
   }
   .bookingFormCard {
     padding: 24px;
-    margin-top: -20px;
+    margin-top: -48px;
   }
   .formGrid {
     grid-template-columns: 1fr;
