@@ -113,15 +113,6 @@ export default function Header() {
                 Contact
               </Link>
             </li>
-            <li className={styles.navItem}>
-              <Link 
-                href="/#reviews" 
-                className={styles.navLink} 
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Reviews
-              </Link>
-            </li>
           </ul>
         </nav>
 
