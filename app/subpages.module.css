@@ -1113,3 +1113,59 @@
     grid-column: span 1;
   }
 }
+
+/* ==========================================
+   SIMPLE ENTRANCE ANIMATIONS
+   ========================================== */
+.diningIntro {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.roomCard {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.roomCard:nth-child(1) { animation-delay: 0.05s; }
+.roomCard:nth-child(2) { animation-delay: 0.1s; }
+.roomCard:nth-child(3) { animation-delay: 0.15s; }
+.roomCard:nth-child(4) { animation-delay: 0.2s; }
+
+.packageCard {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.packageCard:nth-child(1) { animation-delay: 0.05s; }
+.packageCard:nth-child(2) { animation-delay: 0.1s; }
+.packageCard:nth-child(3) { animation-delay: 0.15s; }
+
+.galleryCol {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.galleryCol:nth-child(1) { animation-delay: 0.05s; }
+.galleryCol:nth-child(2) { animation-delay: 0.1s; }
+.galleryCol:nth-child(3) { animation-delay: 0.15s; }
+
+.menuItemCard {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.menuItemCard:nth-child(1) { animation-delay: 0.05s; }
+.menuItemCard:nth-child(2) { animation-delay: 0.1s; }
+.menuItemCard:nth-child(3) { animation-delay: 0.15s; }
+.menuItemCard:nth-child(4) { animation-delay: 0.2s; }
+.menuItemCard:nth-child(5) { animation-delay: 0.25s; }
+.menuItemCard:nth-child(6) { animation-delay: 0.3s; }
+.menuItemCard:nth-child(7) { animation-delay: 0.35s; }
+.menuItemCard:nth-child(8) { animation-delay: 0.4s; }
+
+.bookingFormCard {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.1s;
+}
+
+.roomDetailHeroContent {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.roomDetailBodyGrid {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.1s;
+}
+
