@@ -2,7 +2,43 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "../subpages.module.css";
+
+const roomsData = [
+  {
+    id: "single-room",
+    title: "Single Room",
+    price: 25,
+    image: "/images/room_single.png",
+    description: "Experience cozy refinement. Specifically tailored for business executives and solo travelers seeking a peaceful and productive sanctuary. Featuring premium bedding, workspace, and luxury amenities.",
+    tags: ["1 Premium Bed", "Air Conditioning", "Free High-Speed Wi-Fi", "Smart TV", "En-suite Bathroom"]
+  },
+  {
+    id: "double-room",
+    title: "Double Room",
+    price: 30,
+    image: "/images/room_double.png",
+    description: "Unwind in absolute comfort. Specially designed for couples or colleagues looking for extra space. Indulge in refined architecture, double premium beds, elegant wardrobe space, and high-end room service.",
+    tags: ["1 Double / 2 Twin Beds", "Air Conditioning", "Free High-Speed Wi-Fi", "Private Safe", "Spacious Desk", "Flat Screen TV"]
+  },
+  {
+    id: "deluxe-suite",
+    title: "Deluxe Suite",
+    price: 50,
+    image: "/images/room_deluxe.png",
+    description: "Immerse yourself in elevated luxury. Our Deluxe Suite is built for guests seeking premium architectural details, separate seating areas, gold accents, a plush king-size bed, and a spacious private bathroom.",
+    tags: ["1 King Size Bed", "Seating Lounge", "Mini Bar", "Air Conditioning", "Free High-Speed Wi-Fi", "Espresso Machine"]
+  },
+  {
+    id: "presidential-suite",
+    title: "Presidential Suite",
+    price: 80,
+    image: "/images/room_presidential.png",
+    description: "The peak of refined elegance and privacy. Spanning an expansive layout, the Presidential Suite features a private lounge, dining space, floor-to-ceiling views, and premium personalized services.",
+    tags: ["Ultra King Bed", "Private Living Room", "Dining Area", "Panoramic View", "VIP Welcome Amenities", "Luxury Bathtub"]
+  }
+];
 
 export default function Rooms() {
   const [bookingInfo, setBookingInfo] = useState({
@@ -37,12 +73,12 @@ export default function Rooms() {
         </div>
       </section>
 
-      {/* Booking details form inside Rooms Page for better UX */}
+      {/* Booking details form inside Rooms Page */}
       <section className={styles.section}>
         <div className={styles.diningIntro}>
           <h2 className={styles.roomTitle} style={{ textAlign: "center", fontSize: "32px" }}>Select Your Sanctuary</h2>
           <p className={styles.diningDesc}>
-            Enter your booking details below, then click the "Book Stay" button on your preferred room option to finalize your reservation via WhatsApp.
+            Enter your booking details below, then click "Book Now" on your preferred room option to finalize your reservation via WhatsApp, or click "Explore Room" to see detailed specifications.
           </p>
         </div>
 
@@ -107,75 +143,49 @@ export default function Rooms() {
 
         {/* Rooms Grid */}
         <div className={styles.roomsGrid}>
-          {/* Card 1: Single Room */}
-          <div className={styles.roomCard}>
-            <div className={styles.roomImageContainer}>
-              <Image
-                src="/images/room_single.png"
-                alt="Same Hotel Single Room"
-                fill
-                priority
-                className={styles.roomImage}
-              />
-              <span className={styles.roomPriceBadge}>$25 / Night</span>
-            </div>
-            <div className={styles.roomDetails}>
-              <h3 className={styles.roomTitle}>Single Room</h3>
-              <p className={styles.roomDesc}>
-                Experience cozy refinement. Specifically tailored for business executives and solo travelers seeking a peaceful and productive sanctuary. Featuring premium bedding, workspace, and luxury amenities.
-              </p>
-              <div className={styles.roomTags}>
-                <span className={styles.roomTag}>1 Premium Bed</span>
-                <span className={styles.roomTag}>Air Conditioning</span>
-                <span className={styles.roomTag}>Free High-Speed Wi-Fi</span>
-                <span className={styles.roomTag}>Smart TV</span>
-                <span className={styles.roomTag}>En-suite Bathroom</span>
+          {roomsData.map((room) => (
+            <div key={room.id} className={styles.roomCard}>
+              <div className={styles.roomImageContainer}>
+                <Image
+                  src={room.image}
+                  alt={`Same Hotel ${room.title}`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className={styles.roomImage}
+                />
+                <span className={styles.roomPriceBadge}>${room.price} / Night</span>
               </div>
-              <a
-                href={getWhatsAppLink("Single Room", 25)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.roomBookBtn}
-              >
-                Book Single Room
-              </a>
-            </div>
-          </div>
+              <div className={styles.roomDetails}>
+                <h3 className={styles.roomTitle}>{room.title}</h3>
+                <p className={styles.roomDesc}>{room.description}</p>
+                
+                <div className={styles.roomTags}>
+                  {room.tags.map((tag, tIdx) => (
+                    <span key={tIdx} className={styles.roomTag}>{tag}</span>
+                  ))}
+                </div>
 
-          {/* Card 2: Double Room */}
-          <div className={styles.roomCard}>
-            <div className={styles.roomImageContainer}>
-              <Image
-                src="/images/room_double.png"
-                alt="Same Hotel Double Room"
-                fill
-                className={styles.roomImage}
-              />
-              <span className={styles.roomPriceBadge}>$30 / Night</span>
-            </div>
-            <div className={styles.roomDetails}>
-              <h3 className={styles.roomTitle}>Double Room</h3>
-              <p className={styles.roomDesc}>
-                Unwind in absolute comfort. Specially designed for couples or colleagues looking for extra space. Indulge in refined architecture, double premium beds, elegant wardrobe space, and high-end room service.
-              </p>
-              <div className={styles.roomTags}>
-                <span className={styles.roomTag}>1 Double / 2 Twin Beds</span>
-                <span className={styles.roomTag}>Air Conditioning</span>
-                <span className={styles.roomTag}>Free High-Speed Wi-Fi</span>
-                <span className={styles.roomTag}>Private Safe</span>
-                <span className={styles.roomTag}>Spacious Desk</span>
-                <span className={styles.roomTag}>Flat Screen TV</span>
+                <div style={{ display: "flex", gap: "12px", marginTop: "auto" }}>
+                  <Link 
+                    href={`/rooms/${room.id}`}
+                    className={styles.roomBookBtn}
+                    style={{ backgroundColor: "var(--color-dark)", flex: 1, boxShadow: "none" }}
+                  >
+                    Explore Room
+                  </Link>
+                  <a
+                    href={getWhatsAppLink(room.title, room.price)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.roomBookBtn}
+                    style={{ flex: 1 }}
+                  >
+                    Book Now
+                  </a>
+                </div>
               </div>
-              <a
-                href={getWhatsAppLink("Double Room", 30)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.roomBookBtn}
-              >
-                Book Double Room
-              </a>
             </div>
-          </div>
+          ))}
         </div>
       </section>
     </div>

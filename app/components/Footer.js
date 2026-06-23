@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import styles from "./Footer.module.css";
+import Logo from "./Logo";
 
 export default function Footer() {
   return (
@@ -10,7 +11,10 @@ export default function Footer() {
         
         {/* Footer Branding */}
         <div className={styles.footerBrand}>
-          <h2 className={styles.footerLogo}>Same Hotel</h2>
+          <div className={styles.footerLogoWrapper}>
+            <Logo variant="gold" width={40} height={40} className={styles.footerLogoIcon} />
+            <h2 className={styles.footerLogo}>Same Hotel</h2>
+          </div>
           <p className={styles.footerTagline}>
             Redefining the standards of luxury through architectural purity and exceptional service.
           </p>
@@ -39,6 +43,8 @@ export default function Footer() {
             <li><Link href="/" className={styles.footerLink}>Home</Link></li>
             <li><Link href="/rooms" className={styles.footerLink}>Rooms</Link></li>
             <li><Link href="/dining" className={styles.footerLink}>Dining</Link></li>
+            <li><Link href="/bookings" className={styles.footerLink}>Bookings</Link></li>
+            <li><Link href="/gallery" className={styles.footerLink}>Gallery</Link></li>
             <li><Link href="/about" className={styles.footerLink}>About</Link></li>
             <li><Link href="/contact" className={styles.footerLink}>Contact</Link></li>
           </ul>

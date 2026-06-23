@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./Header.module.css";
+import Logo from "./Logo";
 
 export default function Header() {
   const pathname = usePathname();
@@ -20,7 +21,8 @@ export default function Header() {
       <div className={styles.headerInner}>
         <div className={styles.logo}>
           <Link href="/" className={styles.logoLink} onClick={() => setIsMobileMenuOpen(false)}>
-            SH
+            <Logo variant="currentColor" width={32} height={32} className={styles.logoIcon} />
+            <span className={styles.logoText}>SAME HOTEL</span>
           </Link>
         </div>
 
@@ -36,15 +38,33 @@ export default function Header() {
                 Home
               </Link>
             </li>
-            <li className={styles.navItem}>
+            
+            {/* Rooms Dropdown */}
+            <li className={`${styles.navItem} ${styles.hasDropdown}`}>
               <Link 
                 href="/rooms" 
-                className={`${styles.navLink} ${isActive('/rooms') ? styles.active : ''}`} 
+                className={`${styles.navLink} ${isActive('/rooms') ? styles.active : ''}`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Rooms
+                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.arrowIcon}>
+                  <path d="m1 1 4 4 4-4"/>
+                </svg>
               </Link>
+              <ul className={styles.dropdownMenu}>
+                <li>
+                  <Link href="/rooms" className={styles.dropdownLink} onClick={() => setIsMobileMenuOpen(false)}>
+                    All Rooms
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/rooms/meetings" className={styles.dropdownLink} onClick={() => setIsMobileMenuOpen(false)}>
+                    Meetings & Events
+                  </Link>
+                </li>
+              </ul>
             </li>
+
             <li className={styles.navItem}>
               <Link 
                 href="/dining" 
@@ -54,6 +74,27 @@ export default function Header() {
                 Dining
               </Link>
             </li>
+            
+            <li className={styles.navItem}>
+              <Link 
+                href="/bookings" 
+                className={`${styles.navLink} ${isActive('/bookings') ? styles.active : ''}`} 
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Bookings
+              </Link>
+            </li>
+
+            <li className={styles.navItem}>
+              <Link 
+                href="/gallery" 
+                className={`${styles.navLink} ${isActive('/gallery') ? styles.active : ''}`} 
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Gallery
+              </Link>
+            </li>
+
             <li className={styles.navItem}>
               <Link 
                 href="/about" 
@@ -70,6 +111,15 @@ export default function Header() {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Contact
+              </Link>
+            </li>
+            <li className={styles.navItem}>
+              <Link 
+                href="/#reviews" 
+                className={styles.navLink} 
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Reviews
               </Link>
             </li>
           </ul>

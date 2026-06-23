@@ -547,3 +547,569 @@
     padding: 24px;
   }
 }
+
+/* ==========================================
+   GALLERY PAGE STYLES
+   ========================================== */
+.galleryGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr 1fr;
+  gap: 20px;
+  width: 100%;
+  max-width: 1100px;
+  margin-top: 40px;
+}
+
+.galleryCol {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.galleryItem {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+  transition: var(--transition-smooth);
+  cursor: pointer;
+}
+
+.galleryItem:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+}
+
+.galleryItemOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  z-index: 2;
+}
+
+.galleryItem:hover .galleryItemOverlay {
+  opacity: 1;
+}
+
+.galleryItemTitle {
+  color: var(--color-white);
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================
+   BOOKING PAGE STYLES
+   ========================================== */
+.statsBar {
+  background-color: var(--color-dark);
+  width: 100%;
+  padding: 24px 10%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.statItem {
+  text-align: center;
+  color: var(--color-white);
+  flex: 1;
+  min-width: 150px;
+}
+
+.statVal {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  color: var(--color-gold);
+  margin-bottom: 4px;
+  display: block;
+}
+
+.statLabel {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+}
+
+.bookingFormCard {
+  background-color: var(--color-white);
+  border-radius: 16px;
+  padding: 48px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.015);
+  width: 100%;
+  max-width: 850px;
+  margin-top: -60px; /* pull up over the stats bar slightly */
+  z-index: 10;
+  position: relative;
+  margin-bottom: 80px;
+}
+
+.bookingFormTitle {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--color-dark);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.bookingFormSubtitle {
+  font-size: 14px;
+  color: var(--color-dark-muted);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.formGridFull {
+  grid-column: span 2;
+}
+
+.whatsappBtn {
+  background-color: #25d366;
+  color: var(--color-white);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 16px;
+  border-radius: 8px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.25);
+  transition: var(--transition-smooth);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.whatsappBtn:hover {
+  background-color: #20ba56;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+  transform: translateY(-1px);
+}
+
+.bookingDisclaimer {
+  font-size: 12px;
+  color: var(--color-dark-muted);
+  text-align: center;
+  margin-top: 16px;
+  opacity: 0.8;
+}
+
+/* ==========================================
+   MEETINGS & EVENTS STYLES
+   ========================================== */
+.meetingsIntro {
+  max-width: 800px;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.packagesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  width: 100%;
+  max-width: 1100px;
+  margin-bottom: 64px;
+}
+
+.packageCard {
+  background-color: var(--color-white);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.015);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-smooth);
+}
+
+.packageCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.05);
+}
+
+.packageHeader {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+}
+
+.packageName {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-dark);
+  margin-bottom: 8px;
+}
+
+.packagePrice {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--color-gold);
+}
+
+.packagePriceSpan {
+  font-size: 13px;
+  color: var(--color-dark-muted);
+  font-weight: 400;
+}
+
+.packageFeatures {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: auto;
+}
+
+.packageFeature {
+  font-size: 14px;
+  color: var(--color-dark-muted);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.packageFeature svg {
+  color: var(--color-gold);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.tableSection {
+  width: 100%;
+  max-width: 1100px;
+  margin-bottom: 64px;
+}
+
+.sectionSubtitle {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--color-dark);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.ratesTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  background-color: var(--color-white);
+}
+
+.ratesTable th {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  padding: 16px 24px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.ratesTable td {
+  padding: 16px 24px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  font-size: 14px;
+  color: var(--color-dark-muted);
+}
+
+.ratesTable tr:last-child td {
+  border-bottom: none;
+}
+
+.ratesTable tr:nth-child(even) {
+  background-color: hsl(30, 10%, 97%);
+}
+
+.meetingGalleryGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+  max-width: 1100px;
+  margin-bottom: 64px;
+}
+
+.meetingGalleryItem {
+  position: relative;
+  height: 320px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.03);
+}
+
+/* ==========================================
+   ROOM DETAIL PAGE STYLES
+   ========================================== */
+.roomDetailHero {
+  position: relative;
+  width: 100%;
+  height: 55vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 60px 10%;
+  background-color: var(--color-dark);
+}
+
+.roomDetailHeroContent {
+  position: relative;
+  z-index: 10;
+  color: var(--color-white);
+  width: 100%;
+}
+
+.roomDetailTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+  font-weight: 300;
+  margin-bottom: 12px;
+}
+
+.roomDetailPrice {
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: 500;
+  color: var(--color-gold);
+}
+
+.roomDetailPriceSpan {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+}
+
+.roomDetailBodyGrid {
+  display: grid;
+  grid-template-columns: 1.8fr 1.2fr;
+  gap: 48px;
+  width: 100%;
+  max-width: 1100px;
+  margin-top: 48px;
+}
+
+.roomDescriptionText {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--color-dark-muted);
+  margin-bottom: 40px;
+}
+
+.roomSpecsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 24px 0;
+}
+
+.roomSpecItem {
+  text-align: center;
+}
+
+.roomSpecLabel {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--color-gold);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.roomSpecVal {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+.amenitiesChecklist {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.checklistTitle {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  color: var(--color-dark);
+  margin-bottom: 20px;
+  grid-column: span 2;
+}
+
+.checklistItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.5px;
+  color: var(--color-dark-muted);
+}
+
+.checklistItem svg {
+  color: var(--color-gold);
+}
+
+.policyBlock {
+  background-color: hsl(30, 10%, 96%);
+  border-radius: 12px;
+  padding: 28px;
+}
+
+.policyTitle {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  color: var(--color-dark);
+  margin-bottom: 16px;
+}
+
+.policyList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.policyItem {
+  font-size: 13.5px;
+  color: var(--color-dark-muted);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.policyItem::before {
+  content: '•';
+  color: var(--color-gold);
+  font-weight: bold;
+}
+
+.roomSidebar {
+  position: sticky;
+  top: 120px;
+  height: fit-content;
+}
+
+.sidebarCard {
+  background-color: var(--color-white);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0,0,0,0.015);
+}
+
+.sidebarCardTitle {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-dark);
+  margin-bottom: 24px;
+}
+
+.sidebarInfoRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  font-size: 14px;
+  color: var(--color-dark-muted);
+}
+
+.sidebarInfoRow:last-of-type {
+  border-bottom: none;
+  margin-bottom: 24px;
+}
+
+.sidebarInfoVal {
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+/* ==========================================
+   UPDATED RESPONSIVENESS
+   ========================================== */
+@media (max-width: 992px) {
+  .galleryGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .packagesGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .roomDetailBodyGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .roomSidebar {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .galleryGrid {
+    grid-template-columns: 1fr;
+  }
+  .statsBar {
+    padding: 20px;
+  }
+  .bookingFormCard {
+    padding: 24px;
+    margin-top: -20px;
+  }
+  .formGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .formGridFull {
+    grid-column: span 1;
+  }
+  .meetingGalleryGrid {
+    grid-template-columns: 1fr;
+  }
+  .roomSpecsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 8px;
+  }
+  .amenitiesChecklist {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .checklistTitle {
+    grid-column: span 1;
+  }
+}
