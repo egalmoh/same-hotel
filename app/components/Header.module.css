@@ -8,6 +8,7 @@
   padding: 24px 40px;
   display: flex;
   justify-content: center;
+  pointer-events: none; /* Let pointer events pass through empty padding/background */
 }
 
 .headerInner {
@@ -27,6 +28,7 @@
     0 1px 3px rgba(0, 0, 0, 0.02);
   position: relative;
   animation: fadeInNav 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  pointer-events: auto; /* Reactivate click/hover events on the menu capsule itself */
 }
 
 /* Logo Design */

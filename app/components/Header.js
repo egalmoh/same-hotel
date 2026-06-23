@@ -100,6 +100,11 @@ export default function Header() {
                     Events & Meetings
                   </Link>
                 </li>
+                <li>
+                  <Link href="/rooms/conference-halls" className={styles.dropdownLink} onClick={() => setIsMobileMenuOpen(false)}>
+                    Conference Halls
+                  </Link>
+                </li>
               </ul>
             </li>
 
