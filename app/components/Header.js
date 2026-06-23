@@ -15,6 +15,8 @@ export default function Header() {
   };
 
   const isActive = (path) => pathname === path;
+  const isAccommodationsActive = () => pathname.startsWith('/rooms') && !pathname.includes('/meetings');
+  const isMeetingsActive = () => pathname.includes('/meetings');
 
   return (
     <header className={styles.header}>
@@ -39,27 +41,63 @@ export default function Header() {
               </Link>
             </li>
             
-            {/* Rooms Dropdown */}
+            {/* Accommodations Dropdown */}
             <li className={`${styles.navItem} ${styles.hasDropdown}`}>
               <Link 
                 href="/rooms" 
-                className={`${styles.navLink} ${isActive('/rooms') ? styles.active : ''}`}
+                className={`${styles.navLink} ${isAccommodationsActive() ? styles.active : ''}`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Rooms
+                Accommodations
                 <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.arrowIcon}>
                   <path d="m1 1 4 4 4-4"/>
                 </svg>
               </Link>
               <ul className={styles.dropdownMenu}>
                 <li>
-                  <Link href="/rooms" className={styles.dropdownLink} onClick={() => setIsMobileMenuOpen(false)}>
-                    All Rooms
+                  <Link href="/rooms/single-room" className={styles.dropdownLink} onClick={() => setIsMobileMenuOpen(false)}>
+                    Single Room
                   </Link>
                 </li>
                 <li>
+                  <Link href="/rooms/double-room" className={styles.dropdownLink} onClick={() => setIsMobileMenuOpen(false)}>
+                    Double Room
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/rooms/deluxe-suite" className={styles.dropdownLink} onClick={() => setIsMobileMenuOpen(false)}>
+                    Deluxe Suite
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/rooms/presidential-suite" className={styles.dropdownLink} onClick={() => setIsMobileMenuOpen(false)}>
+                    Presidential Suite
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/rooms" className={styles.dropdownLink} onClick={() => setIsMobileMenuOpen(false)}>
+                    All Accommodations
+                  </Link>
+                </li>
+              </ul>
+            </li>
+
+            {/* Functions & Events Dropdown */}
+            <li className={`${styles.navItem} ${styles.hasDropdown}`}>
+              <Link 
+                href="/rooms/meetings" 
+                className={`${styles.navLink} ${isMeetingsActive() ? styles.active : ''}`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Functions & Events
+                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.arrowIcon}>
+                  <path d="m1 1 4 4 4-4"/>
+                </svg>
+              </Link>
+              <ul className={styles.dropdownMenu}>
+                <li>
                   <Link href="/rooms/meetings" className={styles.dropdownLink} onClick={() => setIsMobileMenuOpen(false)}>
-                    Meetings & Events
+                    Events & Meetings
                   </Link>
                 </li>
               </ul>
@@ -85,14 +123,30 @@ export default function Header() {
               </Link>
             </li>
 
-            <li className={styles.navItem}>
+            {/* Gallery Dropdown */}
+            <li className={`${styles.navItem} ${styles.hasDropdown}`}>
               <Link 
                 href="/gallery" 
                 className={`${styles.navLink} ${isActive('/gallery') ? styles.active : ''}`} 
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Gallery
+                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.arrowIcon}>
+                  <path d="m1 1 4 4 4-4"/>
+                </svg>
               </Link>
+              <ul className={styles.dropdownMenu}>
+                <li>
+                  <Link href="/gallery?category=accommodations" className={styles.dropdownLink} onClick={() => setIsMobileMenuOpen(false)}>
+                    Accommodations Photos
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/gallery?category=conference" className={styles.dropdownLink} onClick={() => setIsMobileMenuOpen(false)}>
+                    Conference Photos
+                  </Link>
+                </li>
+              </ul>
             </li>
 
             <li className={styles.navItem}>
