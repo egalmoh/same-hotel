@@ -27,7 +27,7 @@ export default function MeetingsAndEvents() {
   const getWhatsAppLink = () => {
     const { name, venue, position, company, phone, date, attendees, description } = formData;
     const text = `Hello Same Hotel, I would like to book a meeting/event venue:\n\n👤 Full Name: ${name || "Not specified"}\n👔 Position: ${position || "Not specified"}\n🏢 Company Name: ${company || "Not specified"}\n📞 Contact Phone: ${phone || "Not specified"}\n🏛️ Venue Selected: ${venue}\n📅 Proposed Date: ${date || "Not specified"}\n👥 Number of Persons: ${attendees || "Not specified"}\n📝 Event Description: ${description || "None"}`;
-    return `https://wa.me/2520907275534?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/252614617988?text=${encodeURIComponent(text)}`;
   };
 
   const handleSubmit = (e) => {

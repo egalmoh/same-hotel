@@ -45,7 +45,7 @@ function BookingFormContent() {
   const getWhatsAppLink = () => {
     const { name, phone, email, checkIn, checkOut, guests, nationality, roomType, specialRequests } = formData;
     const text = `Hello Same Hotel, I would like to complete my reservation:\n\n👤 Full Name: ${name || "Not specified"}\n📞 Phone Number: ${phone || "Not specified"}\n✉️ Email Address: ${email || "Not specified"}\n📅 Check-in Date: ${checkIn || "Not specified"}\n📅 Check-out Date: ${checkOut || "Not specified"}\n👥 Number of Guests: ${guests}\n🌍 Nationality: ${nationality || "Not specified"}\n🏨 Room Category: ${roomType}\n📝 Special Requests: ${specialRequests || "None"}`;
-    return `https://wa.me/2520907275534?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/252614617988?text=${encodeURIComponent(text)}`;
   };
 
   const handleSubmit = (e) => {

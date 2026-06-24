@@ -28,7 +28,7 @@ export default function ConferenceHalls() {
   const getWhatsAppLink = () => {
     const { name, mobile, email, company, description, date, participants, budget, details } = formData;
     const text = `Hello Same Hotel, I would like to get a quote for booking a conference hall / event venue:\n\n👤 Full Name: ${name || "Not specified"}\n📞 Mobile Number: ${mobile || "Not specified"}\n✉️ Email Address: ${email || "Not specified"}\n🏢 Company Name: ${company || "Not specified"}\n🏛️ Function Description: ${description || "Not specified"}\n📅 Function Date: ${date || "Not specified"}\n👥 Number of Participants: ${participants || "Not specified"}\n💰 Budget Per Head: $${budget || "Not specified"}\n📝 Event Details: ${details || "None"}`;
-    return `https://wa.me/2520907275534?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/252614617988?text=${encodeURIComponent(text)}`;
   };
 
   const handleSubmit = (e) => {

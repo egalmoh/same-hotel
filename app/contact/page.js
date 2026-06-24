@@ -57,8 +57,7 @@ export default function Contact() {
             <div className={styles.contactInfoGroup}>
               <h3 className={styles.contactInfoTitle}>Inquiries & Reservations</h3>
               <p className={styles.contactInfoDetail}>
-                📞 Telephone: +252 090 727 5534<br />
-                📞 Alternates: +252 61 000 0000<br />
+                📞 Telephone: +252 61 461 7988<br />
                 ✉️ Email: info@samehotel.so<br />
                 ✉️ Bookings: bookings@samehotel.so
               </p>

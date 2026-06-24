@@ -132,7 +132,7 @@ export default function RoomDetail({ params }) {
 
   const getWhatsAppLink = () => {
     const text = `Hello Same Hotel, I would like to book a stay in your ${room.title} ($${room.price}/night). Please let me know availability!`;
-    return `https://wa.me/2520907275534?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/252614617988?text=${encodeURIComponent(text)}`;
   };
 
   return (
